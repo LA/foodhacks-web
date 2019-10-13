@@ -4,7 +4,7 @@ import { List } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 
 type Props = {
-  items: Array<string>;
+  items: Array<any>;
 };
 
 const FeedList = React.memo(function FeedList(props: Props) {
@@ -12,7 +12,7 @@ const FeedList = React.memo(function FeedList(props: Props) {
     <List style={{ width: "80%", margin: "auto", maxWidth: 500 }}>
       {props.items.map((item, index) => (
         <React.Fragment>
-          <FeedListItem text={item} />
+          <FeedListItem key={item.id} text={`${item.quantity}x ${item.name}`} />
           { index !== props.items.length-1 && <Divider />}
         </React.Fragment>
 
