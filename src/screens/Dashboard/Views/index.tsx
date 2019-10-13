@@ -101,7 +101,8 @@ const DashboardView = React.memo(function DashboardView(props: Props) {
             }
           }
         );
-        props.dispatch({ type: ACTIONS.FETCH_DONATIONS });
+        setModalOpen(false);
+        location.reload();
       }
     } catch (err) {
       setError(typeof err === 'string' ? err : 'Unknown Error');
